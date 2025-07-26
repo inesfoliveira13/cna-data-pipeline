@@ -27,6 +27,20 @@ Desenvolver uma solução de ponta-a-ponta para recolha, tratamento, análise e 
   - Ficheiro `.pbix` com a dashboard do Power BI
 - `requirements.txt` – Bibliotecas Python necessárias
 
+## Ordem Recomendada para Execução dos Scripts
+
+- produtor.py – Envia os dados para o tópico Kafka
+- consumidor.py – Recebe os dados e guarda-os
+- criacao_col_fase_nuc.py – Adiciona fase e núcleo aos dados
+- processamento_colocados_candidatos_notas.py – Limpeza e uniformização
+- estatisticas_cursos.py – Gera estatísticas por curso
+- anotar_opcao_candidatura.py – Marca a opção de candidatura de colocação
+- primeira_opcao_vs_colocado.py – Compara 1ª opção com colocação final
+- gerar_chaves.py – Geração de chaves RSA
+- calculo_hash.py – Gera hash dos ficheiros tratados
+- verificar_chaves.py – Verifica integridade e assinatura
+
+
 ## Instruções de Execução
 
 ### 1️- Iniciar o Docker
@@ -41,16 +55,3 @@ No terminal (PowerShell ou outro):
 ```bash
 docker version
 
-
-## Ordem Recomendada para Execução dos Scripts
-
-- produtor.py – Envia os dados para o tópico Kafka
-- consumidor.py – Recebe os dados e guarda-os
-- criacao_col_fase_nuc.py – Adiciona fase e núcleo aos dados
-- processamento_colocados_candidatos_notas.py – Limpeza e uniformização
-- estatisticas_cursos.py – Gera estatísticas por curso
-- anotar_opcao_candidatura.py – Marca a opção de candidatura de colocação
-- primeira_opcao_vs_colocado.py – Compara 1ª opção com colocação final
-- gerar_chaves.py – Geração de chaves RSA
-- calculo_hash.py – Gera hash dos ficheiros tratados
-- verificar_chaves.py – Verifica integridade e assinatura
